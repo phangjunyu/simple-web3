@@ -1,0 +1,64 @@
+html
+  head
+    title Kyber0x
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous')
+    script.
+        function query(){
+        var srcToken = document.getElementById('srcToken').value;
+        var srcQty = document.getElementById('srcQty').value;
+        var destToken = document.getElementById('destToken').value;
+        var data = {
+            srcToken: srcToken,
+            srcQty: srcQty,
+            destToken: destToken
+        };
+        var url = "http://localhost:3001/query?srcToken="+srcToken+"&srcQty="+String(srcQty)+"&destToken="+destToken;
+        $.ajax({
+        type: 'GET',
+        url: url
+        });
+        }
+        function trade(){
+        var srcToken = document.getElementById('srcToken').value;
+        var srcQty = document.getElementById('srcQty').value;
+        var destToken = document.getElementById('destToken').value;
+        var data = {
+            srcToken: srcToken,
+            srcQty: srcQty,
+            destToken: destToken
+        };
+        var url = "http://localhost:3001/trade?srcToken="+srcToken+"&srcQty="+String(srcQty)+"&destToken="+destToken;
+        $.ajax({
+        type: 'GET',
+        url: url
+        });
+        }
+  body
+    h2(style='text-align: center') #{name}
+    .container
+        .row.justify-content-md-center.py-2
+            .col-sm-5
+                | Token you want to 
+                span(style='color:red; font-weight:bold;') sell
+                | :
+                br
+                input#srcToken(type='text', value='', placeholder="ETH")
+                br
+                | Quantity: 
+                br
+                input#srcQty(type='number', value='')
+                br
+                | Minimum Rate: 
+                br
+                input#minRate(type='number', value='')
+                br
+                | Token you want to 
+                span(style='color:green; font-weight: bold;') buy
+                | :
+                br
+                input#destToken(type='text', value='', placeholder="ZIL")
+                br
+                br
+                button#query.btn.btn-warning.mx-2(type='button', onclick='query()') Check Rates
+                button#buy.btn.btn-success.mx-2(type='button', onclick='trade()') Trade!

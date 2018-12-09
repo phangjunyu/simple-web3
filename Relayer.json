@@ -1,0 +1,138 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "proxy",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function",
+    "signature": "0xec556889"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_proxy",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor",
+    "signature": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "minConversionRate",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "slippageRate",
+        "type": "uint256"
+      }
+    ],
+    "name": "Query",
+    "type": "event",
+    "signature": "0xa553885b42122f280387ccdb85a09d345fe1cbeb40a8580ac5103d79a0c7dfab"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "srcToken",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "destToken",
+        "type": "address"
+      }
+    ],
+    "name": "Swap",
+    "type": "event",
+    "signature": "0x11f4b7a3b533a03660188385e81861fb044615f4dafe593932037df7b7836ecd"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "srcToken",
+        "type": "address"
+      },
+      {
+        "name": "srcQty",
+        "type": "uint256"
+      },
+      {
+        "name": "destToken",
+        "type": "address"
+      }
+    ],
+    "name": "queryKyber",
+    "outputs": [
+      {
+        "name": "minConversionRate",
+        "type": "uint256"
+      },
+      {
+        "name": "slippageRate",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x28a7237b"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "srcToken",
+        "type": "address"
+      },
+      {
+        "name": "srcQty",
+        "type": "uint256"
+      },
+      {
+        "name": "destToken",
+        "type": "address"
+      },
+      {
+        "name": "destAddress",
+        "type": "address"
+      },
+      {
+        "name": "maxDestAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "execSwap",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "signature": "0x933d4fab"
+  }
+]
