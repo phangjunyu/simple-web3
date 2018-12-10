@@ -76,7 +76,7 @@ function instantiateKyber(srcToken, srcQty, destToken){
     fs.readFile('Relayer.json', 'utf8', function (err, data) {
         if (err) throw err; // we'll not consider error handling for now
         var jsonInterface = JSON.parse(data);
-        var relayer = new web3.eth.Contract(jsonInterface, '0xF23276778860e420aCFc18ebeEBF7E829b06965c', {
+        var relayer = new web3.eth.Contract(jsonInterface, '0x8A063452f7dF2614Db1bCa3A85eF35DA40cF0835', {
             from: '0x1234567890123456789012345678901234567891', // default from address
             gasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
         });
